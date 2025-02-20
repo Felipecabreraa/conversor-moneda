@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Monedas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-gray-100 flex justify-center items-center h-screen">
+    <div class="bg-white p-8 rounded-xl shadow-md text-center w-96">
+        <h1 class="text-2xl font-bold text-gray-800 mb-4">Conversor de Monedas</h1>
+
+        <!-- Estado de API -->
+        <p id="estadoAPI" class="text-sm font-semibold mb-3 text-gray-700">🔄 Verificando API...</p>
+
+        <!-- Input y Select -->
+        <input type="number" id="monto" placeholder="Ingrese monto en CLP"
+            class="w-full border rounded-md p-2 mb-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+        <select id="moneda"
+            class="w-full border rounded-md p-2 mb-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option value="dolar">Dólar</option>
+            <option value="euro">Euro</option>
+        </select>
+
+        <!-- Botón -->
+        <button onclick="convertir()"
+            class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition">
+            Convertir
+        </button>
+
+        <!-- Resultado -->
+        <p id="resultado" class="text-lg font-semibold text-gray-800 mt-3"></p>
+
+        <!-- Gráfico -->
+        <div class="mt-5 h-60">
+            <canvas id="grafico"></canvas>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
